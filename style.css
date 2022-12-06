@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap');
+
+#body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* background-color: beige; */
+    /* position: relative; */
+    /* opacity: 0.5; */
+
+}
+#body.active{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.topBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #599bb3;
+    color: white;
+    padding: 1%;
+    /* position: fixed; */
+    font-size: larger;
+}
+.topBar h1{
+    font-family: 'Bree Serif', serif;
+}
+.addButton{
+    background-color: rgb(77, 135, 227) ;
+    color: white;
+    border-color: white;
+    border-radius: 5%;
+}
+.addButton.turnOff{
+    user-select: none;
+    pointer-events: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 1000,
+  'GRAD' 200,
+  'opsz' 48,
+  'font-size' 
+}
+
+.addButton {
+	box-shadow: 0px 10px 20px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    background-color: #599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:25px;
+	font-weight:bold;
+	padding:6px 22px;
+
+    outline: none;
+}
+
+.addButton:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+.addButton:active {
+	position:relative;
+	top:1px;
+
+}
+
+.popUp{
+    position: absolute;
+    visibility: hidden;
+  
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    width: fit-content;
+    padding: 2%;
+    left: 50%;
+    margin-top: 0;
+    transform: translate(-50%, -50%)scale(0.1);
+    border-radius: 5px;
+    /* position: relative; */
+    z-index: 1;
+    transition: transform 0.4s, top 0.4s;
+    background-color: white;
+}
+.openPopUp{
+    visibility:visible;
+    margin-top: 10%;
+    transform: translate(-50%, -50%)scale(1);
+    opacity: 1.2;
+
+}
+
+.closePopUp{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-size: 30px;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+.closePopUp:hover{
+    color: red;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+ form div{
+    display: block;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2rem;
+}
+form input[type="text"]{
+    height: 6vh;
+    width: 30vw;
+    margin-top:3%;
+    margin-left: 15%;
+    border-radius: 10vw;
+    border:  5px gray;
+    padding: 2.5%;
+    font-size: 3vw;
+    /* outline: none; */
+    
+}
+::placeholder{
+    color: lightgray;
+}
+
+
+/* listitem */
+.listSection{
+    position: relative;
+    padding: 10%;
+    text-align: center;
+}
+.listContainer{
+   position: absolute;
+   top: 0; 
+   font-size: 2em;
+}
+.listItem{
+      /* margin-right: 50vw; */
+      font-size: 3vw;
+}
+
+
+.eachList{
+    display: flex;
+    justify-self: space-around;
+    align-items: baseline;
+}
+.iconsDiv {
+    font-size: 3em;
+    display: flex;
+    align-items: baseline ;
+    padding: 0, 15px;
+    margin-left: 30vw;
+}
+
+
+
+#icons{
+    margin: 0 1.2vw;
+    font-size: 2vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.updateEachList{
+    background-color: gray;
+    color: white;
+    box-shadow: 0;
+    border-radius: 5px;
+    outline: none;
+}
+
+.deleteEachList{
+    background-color: red;
+    color: white;
+    box-shadow: 0;
+    border-radius: 5px;
+    outline: none;
+}
+.checkEachList{
+    background-color: green;
+    color: white;
+    box-shadow: 0;
+    border-radius: 5px;
+    outline: none;
+}
+.updateEachList.turnOff{
+    user-select: none;
+    pointer-events: none;
+}
+
+.deleteEachList.turnOff{
+    user-select: none;
+    pointer-events: none;
+}
+
+.updateField{
+    visibility: hidden;
+    position: absolute;
+    left: 40vw;
+    font-size: 2rem;
+    outline: none;
+    transform: translate(-50%, -50%)scale(0.1);
+    transition: transform 0.4s, top 0.4s;
+    border-radius: 5px;
+    z-index: 1;
+    background-color: white;
+}
+
+.updateField.active{
+    visibility:visible;
+    top: 40vh;
+    transform: translate(-50%, -50%)scale(1);
+    opacity: 1.2; 
+    background-color: white;
+    padding: 5%;
+}
+.updateField label{
+    display: block;
+}
+
+.updateField input{
+    width: 90%;
+    height: 100%;
+}
+
+.deleteField{
+    font-size: 1.5vw;
+    visibility: hidden;
+    position: absolute;
+    padding: 1%;
+    width: fit-content;
+    transform: translate(-50%, -50%)scale(0.1);
+    transition: transform 0.4s, top 0.4s;
+    top: 25vh;
+}
+.deleteField.active{
+    background-color: white;
+    border-radius: 5px;
+    visibility: visible;
+    transform: translate(-50%, -50%)scale(1);
+    left: 50vw;
+    
+}
+.deleteField button{
+    font-size: 2vw;
+    padding: 0.5%;
+    margin: 0 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:980px){
+      .popUp{
+    width: 80vw;
+   } 
+
+   form div{
+    font-size: 1rem;
+    text-align: center;
+   }
+   form div h3{
+    margin: 0;
+   }
+   .popUp input[type="text"]{
+    width: 70vw;
+    height: 6.5vh;
+    margin-left: 0;
+   } 
+   .closePopUp:focus{
+    color: red;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+}
+
+@media screen and (max-width:540px){
+   .popUp{
+    width: 80vw;
+    padding: 6%;
+   } 
+   .closePopUp{
+    right: 2.5%;
+    top: 1%;
+   }
+   .popUp input[type="text"]{
+    width: 80vw;
+    height: 6.5vh;
+    margin-left: 0;
+    padding: 2.5%;
+    font-size: 5vw;
+    text-decoration: wavy;
+   }
+   .openPopUp{
+    visibility:visible;
+    margin-top: 25%;
+    transform: translate(-50%, -50%)scale(1);
+    opacity: 1.2;
+    }
+    .closePopUp:focus{
+        color: red;
+        transform: rotate(90deg);
+        cursor: pointer;
+    }
+    .listSection{
+        padding: 10px;
+    }
+    .iconsDiv{
+        margin-left: 24vw;
+    }
+    ol{
+        /* margin: 0; */
+        left: 0;
+        bottom: 0;
+    }
+    li{
+        font-size: 5vw;
+    }
+    .updateField.active{
+        padding: 5%;
+        top: 35vh;
+        left: 50vw;
+        font-size: 4vw;
+    }
+    .updateField label{
+        font-size: 4vw;
+    }
+    .deleteField.active{
+        font-size: 4vw;
+        padding: 5%;
+    }
+}
