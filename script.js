@@ -3,8 +3,8 @@ const popUp = document.querySelector('#popUp')
 const closePopUps = document.querySelectorAll('.closePopUp')
 const inptTxt = document.querySelector('#inputText')
 const form = document.querySelector('form')
-const uechlst = document.querySelector('.updateEachList')
-const dechlst = document.querySelector('.deleteEachList')
+// const uechlst = document.querySelector('.updateEachList')
+// const dechlst = document.querySelector('.deleteEachList')
 const updfld = document.querySelector('.updateField')
 const delfld = document.querySelector('.deleteField')
 const listItem = document.querySelector('.listItem')
@@ -15,10 +15,15 @@ const no = document.querySelector('.dfNo')
 const eachList = document.querySelectorAll('.eachList')
 const iconsDiv = document.querySelector('.iconsDiv')
 const listArray = []
+const uechlst = document.createElement('button')
+const dechlst = document.createElement('button')
+const cechlst = document.createElement('button')
 
 
 
 
+
+// pushes form text into the listItem
 form.addEventListener("submit", (e) =>{
     e.preventDefault() 
     
@@ -29,6 +34,7 @@ form.addEventListener("submit", (e) =>{
     removePopUp()
 })
 
+// pushes listItem into the listArray
 function loopList (){
     let txt = inptTxt.value
     listArray.push(txt)
@@ -39,18 +45,20 @@ function loopList (){
     setData()
 }
 
+// Adds listArray to the localStorage
 function setData() {
     localStorage.setItem(`listArray`, JSON.stringify(listArray));
   }
 
+
+//   Returns listArray on windows relaod
   function restore() {
-    if(!localStorage.listArray) {
-        loopList();
-    }else {
-        let objects = localStorage.getItem('listArray');
-        objects = JSON.parse(objects);
-        listArray = objects;
-        loopList();
+    let getListItem = localStorage.getItem('listArray')
+    if(getListItem === "undefined" || getListItem === null) {
+        listArray = [];
+    }else{
+        listArray = JSON.parse(getListItem)
+        loopList(listArray)
     }
   }
 
@@ -104,7 +112,7 @@ uechlst.addEventListener('click',() => {
     })
 })
 
-restore()
+
 
 
 

@@ -13,11 +13,14 @@
     <title>To - do List</title>
 </head>
 <body  id="body">
+    <!-- topBar div starts -->
     <div class="topBar">
         <h1>To - do List</h1>
         <button class="addButton"> &plus; </button>
     </div>
+    <!-- topBar div ends -->
     <section class="listSection">
+<!--         
         <div class="updateField">
             <div class="closePopUp">&times;</div>
             <label for="">Input the new text here &DownArrow;</label>
@@ -28,7 +31,10 @@
             <p>Are you sure you want to delete this ToDo?</p>
             <button class="dfYes">Yes</button>
             <button class="dfNo">No</button>
-        </div>
+        </div> -->
+
+
+        <!-- input todo form starts -->
         <div class="popUp" id="popUp">
             <div class="closePopUp">&times;</div>
             <form action="">
@@ -38,16 +44,15 @@
                 <input type="text" name="" id="inputText" placeholder="what to do..">
             </form>
         </div>
+        <!-- input todo form ends -->
+
+        <!-- listContainer starts -->
         <div class="listContainer">
             <div class="eachList">
-                <h5 class="listItem">Create my todo List</h5>
-                <div class="iconsDiv">
-                    <button id="icons" class="updateEachList">Update</button>
-                    <button id="icons" class="deleteEachList">delete</button>
-                    <button id="icons" class="checkEachList">Check</button>
-                </div>
+                <h5 class="listItem"></h5>
             </div>
         </div>
+        <!-- listContainer ends -->
     </section>
     <script src="script.js"></script>
 </body>
