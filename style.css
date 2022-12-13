@@ -36,14 +36,7 @@
     pointer-events: none;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 1000,
-  'GRAD' 200,
-  'opsz' 48,
-  'font-size' 
-}
+
 
 .addButton {
 	box-shadow: 0px 10px 20px -7px #276873;
@@ -149,11 +142,25 @@ form input[type="text"]{
 }
 
 
-.eachList{
+ul{
     display: flex;
+    flex-direction: column;
     justify-self: space-around;
     align-items: baseline;
+    
 }
+
+.listItem{
+    text-decoration: none;
+}
+
+.eachListItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
 .iconsDiv {
     font-size: 3em;
     display: flex;
@@ -193,12 +200,12 @@ form input[type="text"]{
     border-radius: 5px;
     outline: none;
 }
-.updateEachList.turnOff{
+.turnOff{
     user-select: none;
     pointer-events: none;
 }
 
-.deleteEachList.turnOff{
+.turnOff{
     user-select: none;
     pointer-events: none;
 }
