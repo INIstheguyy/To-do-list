@@ -45,31 +45,46 @@ function loopList() {
       li.classList.add('listItem')
       li.textContent = `${todo}`;
 
-    //   const uechlst = document.createElement("button");
+
+    //   Updates each ListItem
+      const uechlst = document.createElement("button");
       uechlst.textContent = "update";
       uechlst.addEventListener("click", () => {
-        // updfld.classList.add("active");
-        // body.classList.add("active");
-        // addBtn.classList.add("turnOff");
-        // dechlst.classList.add("turnOff");
+        updfld.classList.add("active");
+        body.classList.add("active");
+        addBtn.classList.add("turnOff");
+        dechlst.classList.add("turnOff");
         updateTxt.addEventListener("submit", (e) => {
           e.preventDefault();
         });
       });
 
-    //   const dechlst = document.createElement("button");
+
+
+    //   Deletes each listItem
+      const dechlst = document.createElement("button");
       dechlst.textContent = "Delete"
       dechlst.addEventListener("click", () =>{
         delfld.classList.add("active");
         body.classList.add("active");
         addBtn.classList.add("turnOff");
+        uechlst.classList.add("turnOff")
         yes.addEventListener("click", () => {
-          alert("delete ");
+        eachList.removeChild(div)
+        removePopUp()
         });
         no.addEventListener("click", removePopUp);
       })
 
-      div.append(li, uechlst,dechlst);
+    //   Checks each listItem
+      const cechlst = document.createElement("button");
+      cechlst.textContent = "Check";
+      cechlst.addEventListener("click", () => {
+        li.classList.toggle('check')
+        
+      });
+
+      div.append(li, uechlst,dechlst,cechlst);
       div.classList.add('eachListItem')
 
       eachList.appendChild(div);
