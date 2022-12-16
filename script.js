@@ -3,22 +3,14 @@ const popUp = document.querySelector("#popUp");
 const closePopUps = document.querySelectorAll(".closePopUp");
 const inptTxt = document.querySelector("#inputText");
 const form = document.querySelector("form");
-// const uechlst = document.querySelector('.updateEachList')
-// const dechlst = document.querySelector('.deleteEachList')
-const updfld = document.querySelector(".updateField");
-const delfld = document.querySelector(".deleteField");
-const listItem = document.querySelector(".listItem");
-const updateTxt = document.querySelector("#updateTxt");
 const body = document.querySelector("#body");
-const yes = document.querySelector(".dfYes");
-const no = document.querySelector(".dfNo");
-const eachList = document.querySelector(".eachList");
-const iconsDiv = document.querySelector(".iconsDiv");
+const ol = document.querySelector("ol");
+const echLstItm = document.createElement("div");
 const listArray = [];
 
-const cechlst = document.createElement("button");
-const dechlst = document.createElement("button");
-const uechlst = document.createElement("button");
+
+
+
 
 // pushes form text into the listItem
 form.addEventListener("submit", (e) => {
@@ -33,61 +25,25 @@ form.addEventListener("submit", (e) => {
 function loopList() {
   let txt = inptTxt.value;
   listArray.push(txt);
+ 
 
   listArray.forEach((todo, index) => {
     // Add element in the html if it doesn't exist
     if (!document.getElementById(`todo-${index + 1}`)) {
+        
       const div = document.createElement("div");
         
 
       const li = document.createElement("li");
       li.id = `todo-${index + 1}`;
       li.classList.add('listItem')
-      li.textContent = `${todo}`;
+      const item = `${todo}`;
+      li.textContent = item
+      console.log(item);
 
-
-    //   Updates each ListItem
-      const uechlst = document.createElement("button");
-      uechlst.textContent = "update";
-      uechlst.addEventListener("click", () => {
-        updfld.classList.add("active");
-        body.classList.add("active");
-        addBtn.classList.add("turnOff");
-        dechlst.classList.add("turnOff");
-        updateTxt.addEventListener("submit", (e) => {
-          e.preventDefault();
-        });
-      });
-
-
-
-    //   Deletes each listItem
-      const dechlst = document.createElement("button");
-      dechlst.textContent = "Delete"
-      dechlst.addEventListener("click", () =>{
-        delfld.classList.add("active");
-        body.classList.add("active");
-        addBtn.classList.add("turnOff");
-        uechlst.classList.add("turnOff")
-        yes.addEventListener("click", () => {
-        eachList.removeChild(div)
-        removePopUp()
-        });
-        no.addEventListener("click", removePopUp);
-      })
-
-    //   Checks each listItem
-      const cechlst = document.createElement("button");
-      cechlst.textContent = "Check";
-      cechlst.addEventListener("click", () => {
-        li.classList.toggle('check')
-        
-      });
-
-      div.append(li, uechlst,dechlst,cechlst);
-      div.classList.add('eachListItem')
-
-      eachList.appendChild(div);
+      echLstItm.append(li);
+      echLstItm.classList.add('eachListItem');
+      ol.appendChild(echLstItm);
     }
   });
 
@@ -99,32 +55,17 @@ function setData() {
   localStorage.setItem(`listArray`, JSON.stringify(listArray));
 }
 
-//   Returns listArray on windows relaod
-function restore() {
-  let getListItem = localStorage.getItem("listArray");
-  if (getListItem === "undefined" || getListItem === null) {
-    listArray = [];
-  } else {
-    listArray = JSON.parse(getListItem);
-    loopList(listArray);
-  }
-}
+
 
 addBtn.addEventListener("click", () => {
   body.classList.toggle("active");
   popUp.classList.add("openPopUp");
-  uechlst.classList.add("turnOff");
-  dechlst.classList.add("turnOff");
 });
 
 function removePopUp() {
   popUp.classList.remove("openPopUp");
   addBtn.classList.remove("turnOff");
   body.classList.remove("active");
-    updfld.classList.remove("active");
-    delfld.classList.remove("active");
-    uechlst.classList.remove("turnOff");
-    dechlst.classList.remove("turnoff");
   inptTxt.value = "";
 }
 

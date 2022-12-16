@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
       rel="stylesheet"
@@ -30,17 +29,7 @@
     <!-- topBar div ends -->
     <section class="listSection">
               
-        <div class="updateField">
-            <div class="closePopUp">&times;</div>
-            <label for="">Input the new text here &DownArrow;</label>
-            <input type="text" name="textField" id="updateTxt" class="textField">
-        </div>
-        <div class="deleteField">
-            <div class="closePopUp">&times;</div>
-            <p>Are you sure you want to delete this ToDo?</p>
-            <button class="dfYes">Yes</button>
-            <button class="dfNo">No</button>
-        </div>   
+ 
 
       <!-- input todo form starts -->
       <div class="popUp" id="popUp">
@@ -62,7 +51,11 @@
 
       <!-- listContainer starts -->
       <div class="listContainer">
-        <ol class="eachList"></ol>
+        <ol>
+          <div class="eachListItem">
+
+          </div>
+        </ol>
       </div>
       <!-- listContainer ends -->
     </section>

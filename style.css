@@ -136,13 +136,10 @@ form input[type="text"]{
    top: 0; 
    font-size: 2em;
 }
-.listItem{
-      /* margin-right: 50vw; */
-      font-size: 3vw;
-}
 
 
-ul{
+
+ol{
     display: flex;
     flex-direction: column;
     justify-self: space-around;
@@ -152,17 +149,19 @@ ul{
 
 .listItem{
     text-decoration: none;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.1em 0;
+    font-size: 3vw;
 }
 
-.listItem.check{
-    text-decoration: underline;
-    color: gray;
-}
+
 
 .eachListItem{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-self: space-around;
+    align-items: baseline;
 }
 
 
@@ -183,91 +182,7 @@ ul{
     justify-content: flex-end;
 }
 
-.updateEachList{
-    background-color: gray;
-    color: white;
-    box-shadow: 0;
-    border-radius: 5px;
-    outline: none;
-}
 
-.deleteEachList{
-    background-color: red;
-    color: white;
-    box-shadow: 0;
-    border-radius: 5px;
-    outline: none;
-}
-.checkEachList{
-    background-color: green;
-    color: white;
-    box-shadow: 0;
-    border-radius: 5px;
-    outline: none;
-}
-.updateEachList.turnOff{
-    user-select: none;
-    pointer-events: none;
-}
-
-.deleteEachList.turnOff{
-    user-select: none;
-    pointer-events: none;
-}
-
-.updateField{
-    visibility: hidden;
-    position: absolute;
-    left: 40vw;
-    font-size: 2rem;
-    outline: none;
-    transform: translate(-50%, -50%)scale(0.1);
-    transition: transform 0.4s, top 0.4s;
-    border-radius: 5px;
-    z-index: 1;
-    background-color: white;
-}
-
-.updateField.active{
-    visibility:visible;
-    top: 40vh;
-    transform: translate(-50%, -50%)scale(1);
-    opacity: 1.2; 
-    background-color: white;
-    padding: 5%;
-}
-.updateField label{
-    display: block;
-}
-
-.updateField input{
-    width: 90%;
-    height: 100%;
-}
-
-.deleteField{
-    font-size: 1.5vw;
-    visibility: hidden;
-    position: absolute;
-    padding: 1%;
-    width: fit-content;
-    transform: translate(-50%, -50%)scale(0.1);
-    transition: transform 0.4s, top 0.4s;
-    top: 25vh;
-}
-.deleteField.active{
-    background-color: white;
-    border-radius: 5px;
-    visibility: visible;
-    transform: translate(-50%, -50%)scale(1);
-    left: 50vw;
-    
-}
-.deleteField button{
-    font-size: 2vw;
-    padding: 0.5%;
-    margin: 0 2%;
-}
 
 
 
@@ -339,30 +254,12 @@ ul{
         cursor: pointer;
     }
     .listSection{
-        padding: 10px;
+        padding: 10px;        
     }
-    .iconsDiv{
-        margin-left: 24vw;
-    }
-    ol{
-        /* margin: 0; */
-        left: 0;
-        bottom: 0;
-    }
-    li{
+    .listItem{
         font-size: 5vw;
+        margin: 0.5em 0;
     }
-    .updateField.active{
-        padding: 5%;
-        top: 35vh;
-        left: 50vw;
-        font-size: 4vw;
-    }
-    .updateField label{
-        font-size: 4vw;
-    }
-    .deleteField.active{
-        font-size: 4vw;
-        padding: 5%;
-    }
+ 
+
 }
