@@ -32,6 +32,19 @@ function loopList() {
     if (!document.getElementById(`todo-${index + 1}`)) {
         
       const div = document.createElement("div");
+      const delList = document.createElement("button");
+      delList.textContent = "Delete";
+      const uptList = document.createElement("button");
+      uptList.textContent = "Update";
+      const cheList = document.createElement("button");
+      cheList.textContent = "Check";
+
+      // Delete list item function
+      delList.addEventListener("click", function(){
+        if (!document.getElementById(`todo-${index + 1}`)) {
+          echLstItm.removeChild()
+        }
+      })
         
 
       const li = document.createElement("li");
@@ -41,7 +54,7 @@ function loopList() {
       li.textContent = item
       console.log(item);
 
-      echLstItm.append(li);
+      echLstItm.append(li, delList, uptList, cheList);
       echLstItm.classList.add('eachListItem');
       ol.appendChild(echLstItm);
     }
